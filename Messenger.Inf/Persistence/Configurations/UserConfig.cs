@@ -19,9 +19,13 @@ namespace Messenger.Infastructure.Persistence.Configurations
             builder.Property(x => x.CreatedAt).IsRequired();
             builder.Property(x => x.LastSeenAt).IsRequired();
 
-            builder.HasMany(x => x.Chats)
-                .WithOne(u => u.UserFrom)
-                .HasForeignKey(u => u.UserIdFrom);
+            //builder.HasMany(x => x.Chats)
+            //    .WithOne(u => u.UserFrom)
+            //    .HasForeignKey(u => u.UserIdFrom);
+            
+            //builder.HasMany(x => x.Chats)
+            //    .WithOne(u => u.UserTo)
+            //    .HasForeignKey(u => u.UserIdTo);
 
             builder.HasMany(x => x.Groups)
                 .WithMany(u => u.Users)

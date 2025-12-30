@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Messenger.Domain.Entities
         public string? AvatarUrl { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public Guid UserOwnerId { get; set; }
+        [NotMapped]
         public virtual User UserOwner { get; set; }
         public virtual List<User> Users { get; set; } = new();
         public virtual List<GroupMessage> Messages { get; set; } = new();

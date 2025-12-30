@@ -11,9 +11,9 @@ namespace Messenger.Domain.Entities
         public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public Guid UserIdTo { get; set; }
+        public virtual User UserTo { get; set; } = null!;
         public Guid UserIdFrom { get; set; }
-        public virtual User UserTo { get; set; }
-        public virtual User UserFrom { get; set; }
+        public virtual User UserFrom { get; set; } = null!;
         public bool Blocked { get; set; }
         public List<ChatMessage> Messages { get; set; } = new();
     }

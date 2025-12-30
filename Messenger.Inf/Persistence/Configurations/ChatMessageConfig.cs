@@ -13,12 +13,12 @@ namespace Messenger.Infastructure.Persistence.Configurations
 
             builder.Property(x => x.Content).HasMaxLength(2048);
 
-            builder.HasOne(x => x.Chat)
-                .WithMany(u => u.Messages)
-                .OnDelete(DeleteBehavior.Cascade);
+            //builder.HasOne(x => x.Chat)
+            //    .WithMany(u => u.Messages)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasIndex(x => x.CreatedAt);
-            builder.HasIndex(x => x.Chat);
+            //builder.HasIndex(x => x.Chat);
         }
     }
 }

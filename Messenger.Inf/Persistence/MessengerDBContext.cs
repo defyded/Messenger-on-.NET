@@ -11,7 +11,7 @@ namespace Messenger.Infastructure.Persistence
     {
         public MessengerDBContext(DbContextOptions<MessengerDBContext> options) : base(options)
         {
-            
+            //
         }
         public DbSet<Domain.Entities.User> Users { get; set; }
         public DbSet<Domain.Entities.Chat> Chats { get; set; }

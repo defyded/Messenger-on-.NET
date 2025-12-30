@@ -3,60 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\akou0\\source\\repos\\Messenger\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\userconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\userconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\migrations\\messengerdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\migrations\\messengerdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\userdeviceconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\userdeviceconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\userdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\userdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\readgroupmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\readgroupmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\migrations\\20251230155557_firstmig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\migrations\\20251230155557_firstmig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\readgroupmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\readgroupmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\groupmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\groupmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\groupconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\groupconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\groupmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\groupmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\chatmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\chatmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\userconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\userconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\readgroupmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\readgroupmessageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\chatconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\chatconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\configurations\\userdeviceconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\configurations\\userdeviceconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E80B6762-3E65-45B8-A1CA-53199492B6B3}|Messenger\\Messenger.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E80B6762-3E65-45B8-A1CA-53199492B6B3}|Messenger\\Messenger.csproj|solutionrelative:messenger\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E80B6762-3E65-45B8-A1CA-53199492B6B3}|Messenger\\Messenger.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E80B6762-3E65-45B8-A1CA-53199492B6B3}|Messenger\\Messenger.csproj|solutionrelative:messenger\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.inf\\persistence\\messengerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61E733F-BD6D-465D-A93D-C02992881713}|Messenger.Inf\\Messenger.Infastucture.csproj|solutionrelative:messenger.inf\\persistence\\messengerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|c:\\users\\akou0\\source\\repos\\messenger\\messenger.domain\\entities\\readgroupmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39C75432-74BB-4F2C-9691-82BD088D38E3}|Messenger.Domain\\Messenger.Domain.csproj|solutionrelative:messenger.domain\\entities\\readgroupmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -75,96 +87,116 @@
           ]
         },
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 301,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ReadGroupMessageConfig.cs",
-              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\ReadGroupMessageConfig.cs",
-              "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\Configurations\\ReadGroupMessageConfig.cs",
-              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\ReadGroupMessageConfig.cs",
-              "RelativeToolTip": "Messenger.Inf\\Persistence\\Configurations\\ReadGroupMessageConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "MessengerDBContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Migrations\\MessengerDBContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Messenger.Inf\\Migrations\\MessengerDBContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Migrations\\MessengerDBContextModelSnapshot.cs",
+              "RelativeToolTip": "Messenger.Inf\\Migrations\\MessengerDBContextModelSnapshot.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T09:12:25.839Z",
+              "WhenOpened": "2025-12-30T15:57:09.253Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GroupMessageConfig.cs",
-              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\GroupMessageConfig.cs",
-              "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\Configurations\\GroupMessageConfig.cs",
-              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\GroupMessageConfig.cs",
-              "RelativeToolTip": "Messenger.Inf\\Persistence\\Configurations\\GroupMessageConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "20251230155557_FirstMig.cs",
+              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Migrations\\20251230155557_FirstMig.cs",
+              "RelativeDocumentMoniker": "Messenger.Inf\\Migrations\\20251230155557_FirstMig.cs",
+              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Migrations\\20251230155557_FirstMig.cs",
+              "RelativeToolTip": "Messenger.Inf\\Migrations\\20251230155557_FirstMig.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T09:12:05.312Z",
+              "WhenOpened": "2025-12-30T15:56:12.831Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "ReadGroupMessageConfig.cs",
+              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\ReadGroupMessageConfig.cs",
+              "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\Configurations\\ReadGroupMessageConfig.cs",
+              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\ReadGroupMessageConfig.cs",
+              "RelativeToolTip": "Messenger.Inf\\Persistence\\Configurations\\ReadGroupMessageConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T15:41:15.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GroupMessageConfig.cs",
+              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\GroupMessageConfig.cs",
+              "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\Configurations\\GroupMessageConfig.cs",
+              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\GroupMessageConfig.cs",
+              "RelativeToolTip": "Messenger.Inf\\Persistence\\Configurations\\GroupMessageConfig.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T15:39:43.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "ChatMessage.cs",
               "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\ChatMessage.cs",
               "RelativeDocumentMoniker": "Messenger.Domain\\Entities\\ChatMessage.cs",
               "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\ChatMessage.cs",
               "RelativeToolTip": "Messenger.Domain\\Entities\\ChatMessage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T15:59:47.716Z",
+              "WhenOpened": "2025-12-30T15:28:29.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Chat.cs",
-              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\Chat.cs",
-              "RelativeDocumentMoniker": "Messenger.Domain\\Entities\\Chat.cs",
-              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\Chat.cs",
-              "RelativeToolTip": "Messenger.Domain\\Entities\\Chat.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T15:58:16.231Z",
+              "DocumentIndex": 14,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger\\appsettings.json",
+              "RelativeDocumentMoniker": "Messenger\\appsettings.json",
+              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger\\appsettings.json",
+              "RelativeToolTip": "Messenger\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-30T15:17:34.554Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserDevice.cs",
-              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\UserDevice.cs",
-              "RelativeDocumentMoniker": "Messenger.Domain\\Entities\\UserDevice.cs",
-              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\UserDevice.cs",
-              "RelativeToolTip": "Messenger.Domain\\Entities\\UserDevice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger\\Program.cs",
+              "RelativeDocumentMoniker": "Messenger\\Program.cs",
+              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger\\Program.cs",
+              "RelativeToolTip": "Messenger\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T15:56:19.013Z",
+              "WhenOpened": "2025-12-30T15:17:28.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Messenger.Domain\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\User.cs",
-              "RelativeToolTip": "Messenger.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "MessengerDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\MessengerDBContext.cs",
+              "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\MessengerDBContext.cs",
+              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\MessengerDBContext.cs",
+              "RelativeToolTip": "Messenger.Inf\\Persistence\\MessengerDBContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAmwA0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T15:52:24.465Z",
+              "WhenOpened": "2025-12-30T14:53:08.575Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 6,
-          "Children": [
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 16,
               "Title": "ReadGroupMessage.cs",
               "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\ReadGroupMessage.cs",
               "RelativeDocumentMoniker": "Messenger.Domain\\Entities\\ReadGroupMessage.cs",
@@ -177,93 +209,112 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Group.cs",
               "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\Group.cs",
               "RelativeDocumentMoniker": "Messenger.Domain\\Entities\\Group.cs",
               "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\Group.cs",
               "RelativeToolTip": "Messenger.Domain\\Entities\\Group.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T09:11:55.333Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "GroupConfig.cs",
               "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\GroupConfig.cs",
               "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\Configurations\\GroupConfig.cs",
               "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\GroupConfig.cs",
               "RelativeToolTip": "Messenger.Inf\\Persistence\\Configurations\\GroupConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwDAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T09:11:52.105Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger\\Program.cs",
-              "RelativeDocumentMoniker": "Messenger\\Program.cs",
-              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger\\Program.cs",
-              "RelativeToolTip": "Messenger\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T16:00:27.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "ChatMessageConfig.cs",
               "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\ChatMessageConfig.cs",
               "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\Configurations\\ChatMessageConfig.cs",
               "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\ChatMessageConfig.cs",
               "RelativeToolTip": "Messenger.Inf\\Persistence\\Configurations\\ChatMessageConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-23T15:59:50.009Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "UserDeviceConfig.cs",
               "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\UserDeviceConfig.cs",
               "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\Configurations\\UserDeviceConfig.cs",
               "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\UserDeviceConfig.cs",
               "RelativeToolTip": "Messenger.Inf\\Persistence\\Configurations\\UserDeviceConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-23T15:56:05.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "UserConfig.cs",
               "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\UserConfig.cs",
               "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\Configurations\\UserConfig.cs",
               "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\UserConfig.cs",
               "RelativeToolTip": "Messenger.Inf\\Persistence\\Configurations\\UserConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwBkAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-23T15:52:43.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "ChatConfig.cs",
               "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\ChatConfig.cs",
               "RelativeDocumentMoniker": "Messenger.Inf\\Persistence\\Configurations\\ChatConfig.cs",
               "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Inf\\Persistence\\Configurations\\ChatConfig.cs",
               "RelativeToolTip": "Messenger.Inf\\Persistence\\Configurations\\ChatConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-16T13:55:50.321Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 99,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Messenger.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Messenger.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T15:32:44.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Chat.cs",
+              "DocumentMoniker": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\Chat.cs",
+              "RelativeDocumentMoniker": "Messenger.Domain\\Entities\\Chat.cs",
+              "ToolTip": "C:\\Users\\akou0\\source\\repos\\Messenger\\Messenger.Domain\\Entities\\Chat.cs",
+              "RelativeToolTip": "Messenger.Domain\\Entities\\Chat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T14:51:59.689Z",
               "EditorCaption": ""
             }
           ]

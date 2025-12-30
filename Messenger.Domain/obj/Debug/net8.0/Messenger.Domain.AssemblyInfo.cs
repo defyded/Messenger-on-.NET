@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Messenger.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1f387b9738dae9c7c21005d02c584173918690c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8991fd50b270141975891add4816ef53eb59162f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Messenger.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Messenger.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -20,7 +20,7 @@ namespace Messenger.Domain.Entities
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? LastSeenAt { get; set; }
         public List<UserDevice> UserDevices { get; set; } = new();
-        public List<Chat> Chats { get; set; } = new();
+        //public List<Chat> Chats { get; set; } = new();
         public List<Group> Groups { get; set; } = new(); 
     }
 }

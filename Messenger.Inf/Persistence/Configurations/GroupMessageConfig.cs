@@ -19,10 +19,10 @@ namespace Messenger.Infastructure.Persistence.Configurations
                 .HasForeignKey(x => x.GroupId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasOne(x => x.UserFrom)
-                .WithMany()
-                .HasForeignKey(x => x.UserFromId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasOne(x => x.UserFrom)
+            //    .WithMany()
+            //    .HasForeignKey(x => x.UserFromId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(u => u.ReadByUsers)
                 .WithOne(x => x.ReadMessageGroupMessage)
@@ -30,7 +30,7 @@ namespace Messenger.Infastructure.Persistence.Configurations
                 .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasIndex(x => x.CreatedAt);
-            builder.HasIndex(x => x.UserFrom);
+            //builder.HasIndex(x => x.UserFrom);
 
         }
     }

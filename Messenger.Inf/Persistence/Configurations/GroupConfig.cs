@@ -16,10 +16,10 @@ namespace Messenger.Infastructure.Persistence.Configurations
             builder.Property(x => x.AvatarUrl).HasMaxLength(3100);
             builder.Property(x => x.CreatedAt).IsRequired();
 
-            builder.HasOne(x => x.UserOwner)
-                .WithMany()
-                .HasForeignKey(i => i.UserOwnerId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasOne(x => x.UserOwner)
+            //    .WithMany()
+            //    .HasForeignKey(i => i.UserOwnerId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(x => x.Users)
                 .WithMany(u => u.Groups)
@@ -46,7 +46,7 @@ namespace Messenger.Infastructure.Persistence.Configurations
                 .HasForeignKey(x => x.GroupId);
 
             builder.HasIndex(x => x.Title);
-            builder.HasIndex(x => x.UserOwner);
+            //builder.HasIndex(x => x.UserOwner);
             builder.HasIndex(x => x.CreatedAt);
         }
     }
