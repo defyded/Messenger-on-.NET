@@ -38,12 +38,6 @@ namespace Messenger.Infastucture.Migrations
                     b.Property<Guid>("UserFromId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("UserIdFrom")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("UserIdTo")
-                        .HasColumnType("uuid");
-
                     b.Property<Guid>("UserToId")
                         .HasColumnType("uuid");
 

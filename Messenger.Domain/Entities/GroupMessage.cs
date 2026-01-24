@@ -14,7 +14,7 @@ namespace Messenger.Domain.Entities
         public bool Deleted { get; set; }
         public Guid UserFromId { get; set; }
         public Guid GroupId { get; set; }
-        public virtual User UserFrom { get; set; }
+        public virtual User UserFrom { get; set; } = null!;
         public virtual Group Group { get; set; }
         public virtual List<ReadGroupMessage> ReadByUsers { get; set; } = new();
 
