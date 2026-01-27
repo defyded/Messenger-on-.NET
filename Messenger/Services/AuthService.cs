@@ -21,7 +21,7 @@ namespace Messenger.Services
 
         public async Task<AuthResponce> LoginAsync(LoginRequest request, CancellationToken ct = default)
         {
-            var username = NormalizeUsername(request.Username);
+            var username = Normalize(request.Username);
             //здест тоже надо добавить
             var email = request.Email;
             var user = await _context.Users.SingleOrDefaultAsync(x => x.Email == email, ct);
@@ -43,12 +43,12 @@ namespace Messenger.Services
 
         public async Task<AuthResponce> RegisterAsync(RegisterRequest request, CancellationToken ct = default)
         {
-            var username = NormalizeUsername(request.Username);
+            var username = Normalize(request.Username);
             //добавить нормализацию почты 
             var email = request.Email;
             ValidateCredentials(username, request.Password);
 
-            var exists = await _context.Users.AnyAsync(x => x.Username == username && x.Email == email, ct);
+            var exists = await _context.Users.AnyAsync(x => x.Username == username  x.Email == email, ct);
             if (exists)
                 { throw new AuthException("USERNAME OR EMAIL TAKEN", "This username or email are taken"); }
             
@@ -65,7 +65,7 @@ namespace Messenger.Services
 
         }
 
-        private static string NormalizeUsername(string username) => (username ?? "").Trim().ToLowerInvariant();
+        private static string Normalize(string username) => (username ?? "").Trim().ToLowerInvariant();
         private static void ValidateCredentials(string username, string password)
         {
             if (String.IsNullOrWhiteSpace(username) || username.Length < 3 || username.Length > 50)
