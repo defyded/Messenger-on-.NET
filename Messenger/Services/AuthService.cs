@@ -48,7 +48,7 @@ namespace Messenger.Services
             var email = request.Email;
             ValidateCredentials(username, request.Password);
 
-            var exists = await _context.Users.AnyAsync(x => x.Username == username  x.Email == email, ct);
+            var exists = await _context.Users.AnyAsync(x => x.Username == username || x.Email == email, ct);
             if (exists)
                 { throw new AuthException("USERNAME OR EMAIL TAKEN", "This username or email are taken"); }
             

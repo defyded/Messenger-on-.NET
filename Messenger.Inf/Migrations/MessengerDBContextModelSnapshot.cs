@@ -38,6 +38,9 @@ namespace Messenger.Infastucture.Migrations
                     b.Property<Guid>("UserFromId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uuid");
+
                     b.Property<Guid>("UserToId")
                         .HasColumnType("uuid");
 
@@ -45,9 +48,11 @@ namespace Messenger.Infastucture.Migrations
 
                     b.HasIndex("CreatedAt");
 
-                    b.HasIndex("UserFromId");
+                    b.HasIndex("UserId");
 
                     b.HasIndex("UserToId");
+
+                    b.HasIndex("UserFromId", "UserToId");
 
                     b.ToTable("Chats");
                 });
@@ -284,13 +289,17 @@ namespace Messenger.Infastucture.Migrations
                     b.HasOne("Messenger.Domain.Entities.User", "UserFrom")
                         .WithMany()
                         .HasForeignKey("UserFromId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("Messenger.Domain.Entities.User", null)
+                        .WithMany("Chats")
+                        .HasForeignKey("UserId");
 
                     b.HasOne("Messenger.Domain.Entities.User", "UserTo")
                         .WithMany()
                         .HasForeignKey("UserToId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("UserFrom");
@@ -394,6 +403,8 @@ namespace Messenger.Infastucture.Migrations
 
             modelBuilder.Entity("Messenger.Domain.Entities.User", b =>
                 {
+                    b.Navigation("Chats");
+
                     b.Navigation("UserDevices");
                 });
 #pragma warning restore 612, 618
