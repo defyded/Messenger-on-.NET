@@ -48,9 +48,9 @@ namespace Messenger.Services
             var email = request.Email;
             ValidateCredentials(username, request.Password);
 
-            var exists = await _context.Users.AnyAsync(x => x.Username == username  x.Email == email, ct);
+            var exists = await _context.Users.AnyAsync(x => x.Username == username || x.Email == email, ct);
             if (exists)
-                { throw new AuthException("USERNAME OR EMAIL TAKEN", "This username or email are taken"); }
+                { throw new AuthException("USERNAME_OR_EMAIL_TAKEN", "This username or email are taken"); }
             
             var user = new User { 
                 Username = username,
@@ -69,10 +69,10 @@ namespace Messenger.Services
         private static void ValidateCredentials(string username, string password)
         {
             if (String.IsNullOrWhiteSpace(username) || username.Length < 3 || username.Length > 50)
-                { throw new AuthException("INVALID USERNAME", "Username must be 3 - 50 symbols"); }
+                { throw new AuthException("INVALID_USERNAME", "Username must be 3 - 50 symbols"); }
 
             if (String.IsNullOrWhiteSpace(password) || password.Length < 8)
-                { throw new AuthException("WEAK PASSWORD", "Password must be more than 8 symbols"); }
+                { throw new AuthException("WEAK_PASSWORD", "Password must be more than 8 symbols"); }
         }
 
     }

@@ -11,8 +11,11 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="FluentAssertions" Version="8.8.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.11" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.15.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="Npgsql" Version="9.0.4" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.15.0" />
     <PackageReference Include="Testcontainers" Version="4.10.0" />
@@ -23,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Messenger.Domain\Messenger.Domain.csproj" />
     <ProjectReference Include="..\Messenger.Inf\Messenger.Infastucture.csproj" />
+    <ProjectReference Include="..\Messenger\Messenger.csproj" />
   </ItemGroup>
 
   <ItemGroup>
