@@ -12,7 +12,7 @@ namespace IntegrationTests
         }
 
         [Fact]
-        public async void Add_User_Then_GetByUsername()
+        public async Task Add_User_Then_GetByUsername() //todo
         {
             var dbName = _testFixture.PgDb;
             await using var db = await _testFixture.CreateDbContextAsync(dbName);
@@ -26,6 +26,7 @@ namespace IntegrationTests
                 LastSeenAt = DateTime.UtcNow
             };
             await repo.Add(user);
+            await db.SaveChangesAsync(); //todo
             var loaded = await repo.GetByName("olga");
             Assert.NotNull(loaded);
             Assert.Equal(user.Id, loaded!.Id);

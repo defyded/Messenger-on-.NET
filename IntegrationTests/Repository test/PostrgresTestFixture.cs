@@ -31,7 +31,7 @@ namespace IntegrationTests
                 .WithEnvironment("POSTGRES_PASSWORD", PgPassword)
                 .WithEnvironment("POSTGRES_DB", PgDb)
                 .WithPortBinding(5432, true)
-                .WithWaitStrategy(Wait.ForUnixContainer().UntilExternalTcpPortIsAvailable(5432))
+                .WithWaitStrategy(Wait.ForUnixContainer().UntilMessageIsLogged("database system is ready to accept connections"))
                 .Build();
             await _container.StartAsync();
             var host = _container.Hostname;
@@ -58,16 +58,25 @@ namespace IntegrationTests
             await db.Database.MigrateAsync(ct);
             return db;
         }
-        private async Task CreateDatabaseAsync(string databaseName, CancellationToken ct)
+        private async Task CreateDatabaseAsync(string databaseName, CancellationToken ct) //todo
         {
             await using var conn = new NpgsqlConnection(_adminConnectionString);
             await conn.OpenAsync(ct);
+
             var safeName = databaseName.Replace("\"", "\"\"");
             var sql = $@"CREATE DATABASE ""{safeName}"";";
-            await using var cmd = new NpgsqlCommand(sql, conn);
-            await cmd.ExecuteNonQueryAsync(ct);
-        }
 
+            await using var cmd = new NpgsqlCommand(sql, conn);
+
+            try
+            {
+                await cmd.ExecuteNonQueryAsync(ct);
+            }
+            catch (PostgresException ex) when (ex.SqlState == "42P04")
+            {
+                Console.WriteLine($"Database {databaseName} already exists.");
+            }
+        }
     }
 
 }       
