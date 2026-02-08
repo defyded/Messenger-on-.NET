@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Messenger.Domain.Entities
         public Guid UserToId { get; set; }
         public virtual User UserTo { get; set; } = null!;
         public Guid UserFromId { get; set; }
+        [NotMapped]
         public virtual User UserFrom { get; set; } = null!;
         public bool Blocked { get; set; }
         public List<ChatMessage> Messages { get; set; } = new();
