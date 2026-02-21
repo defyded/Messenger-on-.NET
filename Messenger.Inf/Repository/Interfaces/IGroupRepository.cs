@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Group = Messenger.Domain.Entities.Group;
 
-namespace Messenger.Infastucture.Repository
+namespace Messenger.Infastucture.Repository.Interfaces
 {
     public interface IGroupRepository
     {

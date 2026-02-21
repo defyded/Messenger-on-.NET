@@ -17,7 +17,7 @@ namespace Messenger.Infastructure.Persistence.Configurations
             builder.Property(x => x.AvatarUrl).HasMaxLength(3100);
             builder.Property(x => x.Descrption).HasMaxLength(255);
             builder.Property(x => x.CreatedAt).IsRequired();
-            builder.Property(x => x.LastSeenAt).IsRequired();
+            builder.Property(x => x.LastSeenAt).IsRequired(false);
 
             //builder.HasMany(x => x.Chats)
             //    .WithOne(u => u.UserFrom)

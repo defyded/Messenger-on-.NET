@@ -59,10 +59,10 @@ namespace IntegrationTests.Service_test
             {
                 Username = "bob",
                 Email = "any@gmail.com",
-                PasswordHash = "any"
+                PasswordHash = "qwerty12345"
             });
             await db.SaveChangesAsync();
-            var act = () => svc.RegisterAsync(new RegisterRequest("BOB", "any2@gmail.com", "qwerty"));
+            var act = () => svc.RegisterAsync(new RegisterRequest("BOB", "any2@gmail.com", "qwerty12345"));
             var ex = await Assert.ThrowsAsync<AuthException>(act);
             ex.Code.Should().Be("USERNAME_OR_EMAIL_TAKEN");
         }
@@ -74,10 +74,10 @@ namespace IntegrationTests.Service_test
             {
                 Username = "anyname1",
                 Email = "any@gmail.com",
-                PasswordHash = "any"
+                PasswordHash = "qwerty12345"
             });
             await db.SaveChangesAsync();
-            var act = () => svc.RegisterAsync(new RegisterRequest("anyname1", "any@gmail.com", "qwerty"));
+            var act = () => svc.RegisterAsync(new RegisterRequest("anyname1", "any@gmail.com", "qwerty12345"));
             var ex = await Assert.ThrowsAsync<AuthException>(act);
             ex.Code.Should().Be("USERNAME_OR_EMAIL_TAKEN");
         }

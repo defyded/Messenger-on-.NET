@@ -10,7 +10,6 @@ namespace Messenger.Infastructure.Persistence.Configurations
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
-
             builder.Property(x => x.Content).HasMaxLength(2048);
 
             //builder.HasOne(x => x.Chat)

@@ -1,10 +1,12 @@
 ﻿using Messenger.Domain.Entities;
 using Messenger.Infastructure.Persistence;
+using Messenger.Infastucture.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,9 +21,26 @@ namespace Messenger.Infastucture.Repository
             _context = context;
         }
 
-        public async Task Add(ChatMessage chatMessage) => await _context.ChatMessages.AddAsync(chatMessage);
+        public async Task Add(ChatMessage chatMessage)
+        {
+            await _context.ChatMessages.AddAsync(chatMessage);
+            await _context.SaveChangesAsync();
+        }
 
-        public async Task<ChatMessage?> GetById(Guid Id) => await _context.ChatMessages.FirstOrDefaultAsync(x => x.Id == Id);
-        //Можно добавить удаление Delete 
+        public async Task<ICollection<ChatMessage>> GetByChatId(Guid chatId)
+        {
+            return await _context.ChatMessages
+                .Where(x => x.ChatId == chatId)
+                .OrderBy(x => x.CreatedAt)
+                .ToListAsync();
+        }
+
+        public async Task<ChatMessage?> GetById(Guid MessageId) => await _context.ChatMessages.SingleOrDefaultAsync(x => x.Id == MessageId);
+
+        public async Task Update(ChatMessage chatMessage)
+        {
+            _context.ChatMessages.Update(chatMessage);
+            await _context.SaveChangesAsync();
+        }
     }
 }

@@ -5,10 +5,13 @@ namespace Messenger.Hubs
 {
     public class ChatHub : Hub
     {
-        public async Task SendMessage(string user, string message)
+        public async Task JoinChat(Guid chatId)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            await Groups.AddToGroupAsync(Context.ConnectionId, chatId.ToString());
         }
-
+        public async Task LeaveChat(Guid chatId)
+        {
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, chatId.ToString());
+        }
     }
 }

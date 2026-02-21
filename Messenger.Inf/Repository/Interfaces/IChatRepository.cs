@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Messenger.Infastucture.Repository
+namespace Messenger.Infastucture.Repository.Interfaces
 {
     public interface IChatRepository
     {
         Task<Chat?> GetById(Guid Id);
-        Task<Chat?> GetByUser(Guid Id);
+        Task<ICollection<Chat>> GetByUser(Guid Id);
         Task<ICollection<ChatMessage>> GetChatMessagesByChat(Guid Id);
         Task Delete(Guid Id);
         Task Update(Chat chat);

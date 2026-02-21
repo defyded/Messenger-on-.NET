@@ -18,7 +18,7 @@ namespace Messenger.Domain.Entities
         public bool Deleted { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? LastSeenAt { get; set; }
+        public DateTime? LastSeenAt { get; set; } = null;
         public List<UserDevice> UserDevices { get; set; } = new();
         public List<Chat> Chats { get; set; } = new();
         public List<Group> Groups { get; set; } = new(); 

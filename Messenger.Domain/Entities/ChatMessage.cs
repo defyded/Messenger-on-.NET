@@ -15,6 +15,8 @@ namespace Messenger.Domain.Entities
         public bool Deleted { get; set; }
         public Guid ChatId { get; set; }
         public virtual Chat Chat { get; set; }
+        public Guid SenderId { get; set; }
+        public virtual User Sender { get; set; } = null!;
         //public List<Message> Messages { get; set; } = new();
     }
 }

@@ -1,8 +1,11 @@
+using IntegrationTests;
 using Messenger.Domain.Entities;
 using Messenger.Infastucture.Repository;
 
+
 namespace IntegrationTests
 {
+    //[Collection("Integration")]
     public class UserRepositoryTests : IClassFixture<PostgresTestFixture>
     {
         private readonly PostgresTestFixture _testFixture;

@@ -21,9 +21,8 @@ namespace Messenger.Services
 
         public async Task<AuthResponce> LoginAsync(LoginRequest request, CancellationToken ct = default)
         {
-            var username = Normalize(request.Username);
             //здест тоже надо добавить
-            var email = request.Email;
+            var email = Normalize(request.Email);
             var user = await _context.Users.SingleOrDefaultAsync(x => x.Email == email, ct);
             if(user is null)
                 { throw new AuthException("INVALID_CREDENTIALS", "Неверный логин или пароль."); }
@@ -69,18 +68,24 @@ namespace Messenger.Services
         private static void ValidateCredentials(string username, string password)
         {
             if (String.IsNullOrWhiteSpace(username) || username.Length < 3 || username.Length > 50)
-                { throw new AuthException("INVALID_USERNAME", "Username must be 3 - 50 symbols"); }
+                { throw new ValidateException("INVALID_USERNAME", "Username must be 3 - 50 symbols"); }
 
             if (String.IsNullOrWhiteSpace(password) || password.Length < 8)
-                { throw new AuthException("WEAK_PASSWORD", "Password must be more than 8 symbols"); }
+                { throw new ValidateException("WEAK_PASSWORD", "Password must be more than 8 symbols"); }
         }
-
     }
     public sealed class AuthException : Exception
     {
         public string Code { get; }
 
         public AuthException(string code, string message) : base(message)
+            => Code = code;
+    }
+    public sealed class ValidateException : Exception
+    {
+        public string Code { get; }
+
+        public ValidateException(string code, string message) : base(message)
             => Code = code;
     }
 }

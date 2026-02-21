@@ -1,5 +1,6 @@
 ﻿using Messenger.Domain.Entities;
 using Messenger.Infastructure.Persistence;
+using Messenger.Infastucture.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,33 +19,42 @@ namespace Messenger.Infastucture.Repository
             _context = context;
         }
 
-        public async Task Add(Chat chat) => await _context.Chats.AddAsync(chat);
-
-
-        public async Task Delete(Guid Id)
-        {
-            Chat? tmp = await GetById(Id);
-            //добавить проверку
-             _context.Chats.Remove(tmp);
+        public async Task Add(Chat chat) 
+        { 
+            await _context.Chats.AddAsync(chat);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task<Chat?> GetById(Guid Id) => await _context.Chats.FirstOrDefaultAsync(x => x.Id == Id);
 
-        public async Task<Chat?> GetByUser(Guid Id) => await _context.Chats.FirstOrDefaultAsync(x => x.UserFromId == Id || x.UserToId == Id);
-
-        public async Task<ICollection<ChatMessage>> GetChatMessagesByChat(Guid Id)
+        public async Task Delete(Guid ChatId)
         {
-            var chat = await _context.Chats.FirstOrDefaultAsync(x => x.Id == Id);
+            await _context.Chats
+                .Where(x => x.Id == ChatId)
+                .ExecuteDeleteAsync();
+        }
+
+
+        public async Task<Chat?> GetById(Guid ChatId) => await _context.Chats.FirstOrDefaultAsync(x => x.Id == ChatId);
+
+        public async Task<ICollection<Chat>> GetByUser(Guid UserId)//todo поменять название параметра
+        { 
+            return await _context.Chats.Where(x => x.UserFromId == UserId || x.UserToId == UserId)
+                .ToListAsync(); 
+        }
+
+        public async Task<ICollection<ChatMessage>> GetChatMessagesByChat(Guid ChatId)//todo поменять название параметра
+        {
+            var chat = await _context.Chats.FirstOrDefaultAsync(x => x.Id == ChatId);
 
             if (chat is null) return new List<ChatMessage>();
 
             return chat.Messages;
         }
 
-        public Task Update(Chat chat)
+        public async Task Update(Chat chat)
         {
             _context.Chats.Update(chat);
-            return Task.CompletedTask;
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Containers;
+using IntegrationTests;
 using Messenger.Domain.Entities;
 using Messenger.Infastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -12,8 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace IntegrationTests
-
 {
+    //[CollectionDefinition("Integration", DisableParallelization = true)]
     public sealed class PostgresTestFixture : IAsyncLifetime
     {
         private DotNet.Testcontainers.Containers.IContainer _container = null!;
@@ -60,22 +61,66 @@ namespace IntegrationTests
         }
         private async Task CreateDatabaseAsync(string databaseName, CancellationToken ct) //todo
         {
-            await using var conn = new NpgsqlConnection(_adminConnectionString);
-            await conn.OpenAsync(ct);
+            //await using var conn = new NpgsqlConnection(_adminConnectionString);
+            ////await conn.OpenAsync(ct);
 
             var safeName = databaseName.Replace("\"", "\"\"");
-            var sql = $@"CREATE DATABASE ""{safeName}"";";
 
-            await using var cmd = new NpgsqlCommand(sql, conn);
+            await WithRetries(async () =>
+            {
+                await using var conn = new NpgsqlConnection(_adminConnectionString);
+                await conn.OpenAsync(ct);
 
-            try
+                var safeName = databaseName.Replace("\"", "\"\"");
+                var sql = $"CREATE DATABASE \"{safeName}\"";
+
+                await using var cmd = new NpgsqlCommand(sql, conn);
+                try 
+                { 
+                    await cmd.ExecuteNonQueryAsync(ct); 
+                }
+                catch(PostgresException ex) when (ex.SqlState == "42P04")
+                {
+                    Console.WriteLine("db exists");
+                }
+            });
+
+            //var sql = $@"CREATE DATABASE ""{safeName}"";";
+
+            //await using var cmd = new NpgsqlCommand(sql, conn);
+
+            //try
+            //{
+            //    await cmd.ExecuteNonQueryAsync(ct);
+            //}
+            //catch (PostgresException ex) when (ex.SqlState == "42P04")
+            //{
+            //    Console.WriteLine($"Database {databaseName} already exists.");
+            //}
+        }
+        private async Task WithRetries(Func<Task> action, int tries = 10, int delayMs = 300)
+        {
+            Exception? last = null;
+
+            for (var i = 1; i <= tries; i++)
             {
-                await cmd.ExecuteNonQueryAsync(ct);
+                try
+                {
+                    await action();
+                    return;
+                }
+                catch (Exception ex) when (
+                    ex is NpgsqlException ||
+                    ex is TimeoutException ||
+                    ex is IOException ||
+                    ex.InnerException is EndOfStreamException)
+                {
+                    last = ex;
+                    await Task.Delay(delayMs);
+                }
             }
-            catch (PostgresException ex) when (ex.SqlState == "42P04")
-            {
-                Console.WriteLine($"Database {databaseName} already exists.");
-            }
+
+            throw new InvalidOperationException("Postgres is not ready / connection is unstable.", last);
         }
     }
 

@@ -1,5 +1,6 @@
 ﻿using Messenger.Domain.Entities;
 using Messenger.Infastructure.Persistence;
+using Messenger.Infastucture.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

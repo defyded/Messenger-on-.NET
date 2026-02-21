@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Messenger.Infastucture.Repository
+namespace Messenger.Infastucture.Repository.Interfaces
 {
     public interface IUserDevicesRepository
     {
