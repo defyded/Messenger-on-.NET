@@ -25,10 +25,15 @@ namespace Messenger.Services
                 (c.UserFromId == UserFromId && c.UserToId == UserToId) || 
                 (c.UserFromId == UserToId && c.UserToId == UserFromId));
 
+            if (UserFromId == UserToId)
+            {
+                throw new ChatException("CAN_NOT_CREATE_CHAT_WTIH_MYSELF", "can not create chat with myself");
+            }
             if (existingChat != null)
             {
                 return new ChatDto(
                     existingChat.Id,
+                    UserFromId,
                     UserToId,
                     existingChat.Blocked,
                     existingChat.CreatedAt
@@ -44,6 +49,7 @@ namespace Messenger.Services
             await _chatRepository.Add(chat);
             return new ChatDto(
                 chat.Id,
+                UserFromId,
                 UserToId,
                 chat.Blocked,
                 chat.CreatedAt
@@ -72,6 +78,7 @@ namespace Messenger.Services
 
             return chats.Select(x => new ChatDto(
                 x.Id,
+                userId,
                 x.UserFromId == userId ? x.UserToId : x.UserFromId,
                 x.Blocked,
                 x.CreatedAt

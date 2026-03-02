@@ -85,7 +85,7 @@ namespace IntegrationTests.Service_test
             var result = await _serviceChat.CreatChatAsync(FromId, ToId);
 
             Assert.NotNull(result);
-            Assert.Equal(ExistingChat.Id, result.Id);
+            Assert.Equal(ExistingChat.Id, result.ChatId);
             Assert.Equal(ToId, result.CompanionId);
             Assert.Equal(ExistingChat.Blocked, result.Blocked);
             Assert.Equal(ExistingChat.CreatedAt, result.CreatedAt);
@@ -167,8 +167,8 @@ namespace IntegrationTests.Service_test
             var res = await _serviceChat.GetUserChatsAsync(userId);
 
             Assert.Equal(2, res.Count);
-            Assert.Contains(res, x => x.Id == chat1.Id && x.CompanionId == chat1.UserToId);
-            Assert.Contains(res, x => x.Id == chat2.Id && x.CompanionId == chat2.UserFromId);
+            Assert.Contains(res, x => x.ChatId == chat1.Id && x.CompanionId == chat1.UserToId);
+            Assert.Contains(res, x => x.ChatId == chat2.Id && x.CompanionId == chat2.UserFromId);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Messenger.DTO;
+﻿using Messenger.Domain.Entities;
+using Messenger.DTO;
 using Messenger.Services;
 using Messenger.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -27,21 +28,40 @@ namespace Messenger.Controlers
         public async Task<ActionResult<IReadOnlyList<ChatDto>>> GetChats(CancellationToken cancellationToken)
         {
             var userId = GetUserId();
-            var result = _service.GetUserChatsAsync(userId);
+            var result = await _service.GetUserChatsAsync(userId);
             return Ok(result);
         }
         [HttpPost]
-        public async Task<ActionResult<ChatDto>> CreateChat(ChatDto dto)
+        public async Task<ActionResult<ChatDto>> CreateChat([FromBody]RequestChatCreateDto dto)
         {
             var userId = GetUserId();
-            var createdChat = await _service.CreatChatAsync(userId, dto.CompanionId);
+            
+            try
+            {
+                var createdChat = await _service.CreatChatAsync(userId, dto.CompanionId);
+                return Ok(createdChat);
 
-            return Ok(createdChat);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new ResponseError(ex.Message));//400
+            }
         }
-        //[HttpDelete]
-        //public async Task<ActionResult> DeleteChat()
-        //{
-        //    ToDo доделать
-        //}
+        [HttpDelete("{chatId:guid}")]
+        public async Task<ActionResult> DeleteChat(Guid chatId)
+        {
+            var UserId = GetUserId();
+
+            try
+            {
+                await _service.DeleteChatAsync(chatId, UserId);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResponseError(ex.Message));//400
+            }
+            
+        }
     }
 }
