@@ -5,6 +5,8 @@ using Messenger.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Text.Json;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Messenger.Controlers
 {
@@ -13,8 +15,13 @@ namespace Messenger.Controlers
     [Authorize]
     public class ChatController : Controller
     {
-        private readonly IChatService _service;
-        public ChatController(IChatService service) => _service = service;
+        private readonly IChatService _chatService;
+        private readonly IChatMessageService _messageService; 
+        public ChatController(IChatService chatService, IChatMessageService messageService)
+        {
+            _chatService = chatService;
+            _messageService = messageService;
+        }
 
         private Guid GetUserId()
         {
@@ -28,7 +35,7 @@ namespace Messenger.Controlers
         public async Task<ActionResult<IReadOnlyList<ChatDto>>> GetChats(CancellationToken cancellationToken)
         {
             var userId = GetUserId();
-            var result = await _service.GetUserChatsAsync(userId);
+            var result = await _chatService.GetUserChatsAsync(userId);
             return Ok(result);
         }
         [HttpPost]
@@ -38,7 +45,7 @@ namespace Messenger.Controlers
             
             try
             {
-                var createdChat = await _service.CreatChatAsync(userId, dto.CompanionId);
+                var createdChat = await _chatService.CreateChatAsync(userId, dto.CompanionId);
                 return Ok(createdChat);
 
             }
@@ -54,7 +61,7 @@ namespace Messenger.Controlers
 
             try
             {
-                await _service.DeleteChatAsync(chatId, UserId);
+                await _chatService.DeleteChatAsync(chatId, UserId);
                 return NoContent();
             }
             catch (Exception ex)
@@ -62,6 +69,51 @@ namespace Messenger.Controlers
                 return BadRequest(new ResponseError(ex.Message));//400
             }
             
+        }
+        [HttpGet("{chatId:guid}/messages")]
+        public async Task<ActionResult<ICollection<ChatMessageDto>>> GetMessages(Guid chatId)
+        {
+            try
+            {
+                var userId = GetUserId();
+                var messages = await _messageService.GetChatMessagesAsync(chatId, userId);
+                return Ok(messages);
+            }
+            catch(ChatMessageException ex)
+            {
+                return BadRequest(new ResponseError(ex.Message));
+            }
+        }
+        [HttpPost("{chatId:guid}/messages")]
+        public async Task<ActionResult<ChatMessageDto>> SendMessage(Guid chatId, [FromBody]CreateChatMessageDto dto)
+        {
+            try
+            {
+                var userId = GetUserId();
+                var SecureDto = dto with { ChatId = chatId, SenderId = userId };
+                var result = await _messageService.SendAsync(SecureDto);
+                return Ok(result);
+            }
+            catch(ChatMessageException ex)
+            {
+                return BadRequest(new { error = ex.Code, message = ex.Message });
+            }
+        }
+        [HttpDelete("{chatId:guid}/messages")]
+        public async Task<ActionResult<ChatMessageDto>> DeleteMessage([FromBody]JsonElement element)
+        {
+            try
+            {
+                var userId = GetUserId();
+                element.TryGetProperty("messageId", out var elementmessageId);
+                Guid.TryParse(elementmessageId.GetString(), out var messageId);
+                await _messageService.DeleteMessageAsync(messageId, userId);
+                return NoContent();
+            }
+            catch (ChatMessageException ex)
+            {
+                return BadRequest(new { error = ex.Code, message = ex.Message });
+            }
         }
     }
 }

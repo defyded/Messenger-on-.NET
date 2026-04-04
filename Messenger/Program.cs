@@ -1,3 +1,4 @@
+using Messenger.Hubs;
 using Messenger.Infastructure.Persistence;
 using Messenger.Infastucture.Repository;
 using Messenger.Infastucture.Repository.Interfaces;
@@ -15,7 +16,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MessengerDBContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))); // или UseSqlServer
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
+builder.Services.AddSignalR();
 //нужно регестрировать каждый сервис
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IChatMessageRepository, ChatMessageRepository>();
+builder.Services.AddScoped<IChatMessageService, ChatMessageService>();
 builder.Services.AddScoped<IChatRepository, ChatRepository>();
 builder.Services.AddScoped<IChatService, ChatService>();
 builder.Services.AddScoped<ITokenService, JwtTokenService>();
@@ -47,5 +52,6 @@ if (app.Environment.IsDevelopment())
 }
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapHub<ChatHub>("/chathub");
 app.MapControllers();
 app.Run();

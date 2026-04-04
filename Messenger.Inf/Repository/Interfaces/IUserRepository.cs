@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Messenger.Infastucture.Repository.Interfaces
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
         Task<User?> GetById(Guid Id);
         Task<User?> GetByName(string username);

@@ -6,7 +6,7 @@
          Guid Id, 
          string Username,
          string Email, 
-         string AccsesToken,
+         string AccessToken,
          DateTime ExpiresAtUtc
     );
 }

@@ -11,13 +11,14 @@ namespace Messenger.Services
     public class ChatService : IChatService
     {
         private readonly IChatRepository _chatRepository;
-
-        public ChatService(IChatRepository chatRepository)
+        private readonly IUserRepository _userRepository;
+        public ChatService(IChatRepository chatRepository, IUserRepository userRepository)
         {
             _chatRepository = chatRepository;
+            _userRepository = userRepository;
         }
 
-        public async Task<ChatDto> CreatChatAsync(Guid UserFromId, Guid UserToId)
+        public async Task<ChatDto> CreateChatAsync(Guid UserFromId, Guid UserToId)
         {
             var chats = await _chatRepository.GetByUser(UserFromId);
 
@@ -31,26 +32,44 @@ namespace Messenger.Services
             }
             if (existingChat != null)
             {
+                var companion = existingChat.UserFromId == UserFromId ? existingChat.UserTo : existingChat.UserFrom;
+                var lastMessage = existingChat.Messages?.OrderByDescending(x => x.CreatedAt).FirstOrDefault();
+
+                var lastMessageDto = lastMessage != null ? new ChatMessageDto
+                    (
+                        lastMessage.Id,
+                        lastMessage.SenderId,
+                        lastMessage.Content,
+                        lastMessage.CreatedAt,
+                        lastMessage.ReadAt
+                    ) : null;
                 return new ChatDto(
-                    existingChat.Id,
-                    UserFromId,
-                    UserToId,
+                    existingChat.Id,//todo достать из репа юзера его имя оп toid|| upd1 здесь так же
+                    companion.Id,
+                    companion.Username,
+                    companion.AvatarUrl,
+                    lastMessageDto,
                     existingChat.Blocked,
                     existingChat.CreatedAt
                 );
             }
+            var userTo = await _userRepository.GetById(UserToId);
+            if (userTo == null) throw new ChatException("USER_NOT_FOUND", "user not found");
 
             var chat = new Chat
             {
                 UserFromId = UserFromId,
                 UserToId = UserToId,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.UtcNow,
+                Blocked = false
             };
             await _chatRepository.Add(chat);
             return new ChatDto(
                 chat.Id,
-                UserFromId,
-                UserToId,
+                userTo.Id,
+                userTo.Username,//todo достать из репа юзера его имя оп toid|| upd1 я подумал что достать имя пользователя можно по чату, тк у чата есть UserTo
+                userTo.AvatarUrl,
+                null,
                 chat.Blocked,
                 chat.CreatedAt
             );
@@ -71,18 +90,34 @@ namespace Messenger.Services
             await _chatRepository.Delete(chatId);
         }
         
-
+        //также обновио получение чатов пользователем
         public async Task<IReadOnlyCollection<ChatDto>> GetUserChatsAsync(Guid userId)
         {
             var chats = await _chatRepository.GetByUser(userId);
-
-            return chats.Select(x => new ChatDto(
-                x.Id,
-                userId,
-                x.UserFromId == userId ? x.UserToId : x.UserFromId,
-                x.Blocked,
-                x.CreatedAt
-            )).ToList();
+            return chats.Select(x =>
+            {
+                var companion = x.UserFromId == userId ? x.UserTo : x.UserFrom;
+                var lastMessage = x.Messages
+                    .OrderByDescending(x => x.CreatedAt)
+                    .FirstOrDefault();
+                var lastMessageDto = lastMessage != null ? new ChatMessageDto(
+                        lastMessage.Id,
+                        lastMessage.SenderId,
+                        lastMessage.Content,
+                        lastMessage.CreatedAt,
+                        lastMessage.ReadAt
+                ) : null;
+                return new ChatDto(
+                    x.Id,
+                    companion.Id,
+                    companion.Username,
+                    companion.AvatarUrl,
+                    lastMessageDto,
+                    x.Blocked,
+                    x.CreatedAt);
+            })
+            .OrderByDescending(x => x.CreatedAt)
+            .ToList();
         }
 
         public sealed class ChatException : Exception

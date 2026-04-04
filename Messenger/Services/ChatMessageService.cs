@@ -71,7 +71,7 @@ namespace Messenger.Services
             if (chat == null)
                 throw new ChatMessageException("CHAT_NOT_FOUND", "chat not found");
 
-            if(chat.UserFromId != createMessageDto.SenderId || chat.UserToId != createMessageDto.SenderId)
+            if(chat.UserFromId != createMessageDto.SenderId && chat.UserToId != createMessageDto.SenderId)
                 throw new ChatMessageException("USER_IS_NOT_PART_OF_CHAT", "user is not part of this chat");
 
             var message = new ChatMessage

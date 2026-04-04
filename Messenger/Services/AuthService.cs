@@ -4,6 +4,7 @@ using Messenger.Infastructure.Persistence;
 using Messenger.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Mail;
 
 namespace Messenger.Services
 {
@@ -46,7 +47,11 @@ namespace Messenger.Services
             //добавить нормализацию почты 
             var email = request.Email;
             ValidateCredentials(username, request.Password);
-
+            //ToDo сделать регулярное выражение на почту
+            if (!IsValidEmail(email))
+            {
+                throw new ValidateException("WRONG_EMAIL", "wrong email");
+            }
             var exists = await _context.Users.AnyAsync(x => x.Username == username || x.Email == email, ct);
             if (exists)
                 { throw new AuthException("USERNAME_OR_EMAIL_TAKEN", "This username or email are taken"); }
@@ -63,7 +68,18 @@ namespace Messenger.Services
             return new AuthResponce(user.Id, user.Username, user.Email, token, exp);
 
         }
-
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private static string Normalize(string username) => (username ?? "").Trim().ToLowerInvariant();
         private static void ValidateCredentials(string username, string password)
         {

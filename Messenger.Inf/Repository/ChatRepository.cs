@@ -34,15 +34,23 @@ namespace Messenger.Infastucture.Repository
         }
 
 
-        public async Task<Chat?> GetById(Guid ChatId) => await _context.Chats.FirstOrDefaultAsync(x => x.Id == ChatId);
+        public async Task<Chat?> GetById(Guid ChatId) => await _context.Chats
+            .Include(x => x.UserFrom)
+            .Include(x => x.UserTo)
+            .Include(x => x.Messages)
+            .FirstOrDefaultAsync(x => x.Id == ChatId);
 
-        public async Task<ICollection<Chat>> GetByUser(Guid UserId)//todo поменять название параметра
+        public async Task<ICollection<Chat>>GetByUser(Guid UserId)
         { 
-            return await _context.Chats.Where(x => x.UserFromId == UserId || x.UserToId == UserId)
+            return await _context.Chats
+                .Include(x => x.UserFrom)
+                .Include(x => x.UserTo)
+                .Include(x => x.Messages)
+                .Where(x => x.UserFromId == UserId || x.UserToId == UserId)
                 .ToListAsync(); 
         }
 
-        public async Task<ICollection<ChatMessage>> GetChatMessagesByChat(Guid ChatId)//todo поменять название параметра
+        public async Task<ICollection<ChatMessage>> GetChatMessagesByChat(Guid ChatId)
         {
             var chat = await _context.Chats.FirstOrDefaultAsync(x => x.Id == ChatId);
 

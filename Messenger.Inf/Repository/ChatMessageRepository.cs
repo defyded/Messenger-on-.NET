@@ -35,7 +35,7 @@ namespace Messenger.Infastucture.Repository
                 .ToListAsync();
         }
 
-        public async Task<ChatMessage?> GetById(Guid MessageId) => await _context.ChatMessages.SingleOrDefaultAsync(x => x.Id == MessageId);
+        public async Task<ChatMessage?> GetById(Guid MessageId) => await _context.ChatMessages.FirstOrDefaultAsync(x => x.Id == MessageId);
 
         public async Task Update(ChatMessage chatMessage)
         {
