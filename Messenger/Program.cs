@@ -23,6 +23,7 @@ builder.Services.AddScoped<IChatMessageRepository, ChatMessageRepository>();
 builder.Services.AddScoped<IChatMessageService, ChatMessageService>();
 builder.Services.AddScoped<IChatRepository, ChatRepository>();
 builder.Services.AddScoped<IChatService, ChatService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITokenService, JwtTokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 var jwt = builder.Configuration.GetSection("JWT").Get<JwtOptions>()!;
@@ -42,6 +43,16 @@ builder.Services
             ClockSkew = TimeSpan.FromSeconds(30)
         };
     });
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("https://localhost:7194") // ЗАМЕНИ на URL своего Blazor-приложения
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 var app = builder.Build();
@@ -50,6 +61,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(); 
 }
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapHub<ChatHub>("/chathub");

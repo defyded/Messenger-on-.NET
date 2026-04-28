@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger.Infastucture", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{115B0783-A960-416C-BF24-496BDEC64146}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger.AppHost", "Messenger.AppHost\Messenger.AppHost.csproj", "{24850FBB-C68F-494C-83B0-5FDF140709AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{115B0783-A960-416C-BF24-496BDEC64146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{115B0783-A960-416C-BF24-496BDEC64146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{115B0783-A960-416C-BF24-496BDEC64146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24850FBB-C68F-494C-83B0-5FDF140709AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24850FBB-C68F-494C-83B0-5FDF140709AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24850FBB-C68F-494C-83B0-5FDF140709AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24850FBB-C68F-494C-83B0-5FDF140709AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,7 @@ namespace Messenger.Infastucture.Repository.Interfaces
     public interface IUserRepository
     {
         Task<User?> GetById(Guid Id);
-        Task<User?> GetByName(string username);
+        Task<List<User>> GetByName(string username);
         Task<List<Chat>> GetChats(Guid Id);
         Task<ICollection<Group>> GetGroups(Guid Id);
         Task<ICollection<UserDevice>> GetUserDevices(Guid Id);

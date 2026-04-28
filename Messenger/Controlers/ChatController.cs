@@ -1,9 +1,11 @@
 ﻿using Messenger.Domain.Entities;
 using Messenger.DTO;
+using Messenger.Hubs;
 using Messenger.Services;
 using Messenger.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System.Security.Claims;
 using System.Text.Json;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -15,12 +17,14 @@ namespace Messenger.Controlers
     [Authorize]
     public class ChatController : Controller
     {
+        private readonly IHubContext<ChatHub> _hubContext;
         private readonly IChatService _chatService;
         private readonly IChatMessageService _messageService; 
-        public ChatController(IChatService chatService, IChatMessageService messageService)
+        public ChatController(IChatService chatService, IChatMessageService messageService, IHubContext<ChatHub> hubContext)
         {
             _chatService = chatService;
             _messageService = messageService;
+            _hubContext = hubContext;
         }
 
         private Guid GetUserId()
@@ -89,12 +93,16 @@ namespace Messenger.Controlers
         {
             try
             {
-                var userId = GetUserId();
-                var SecureDto = dto with { ChatId = chatId, SenderId = userId };
-                var result = await _messageService.SendAsync(SecureDto);
+                var userId = GetUserId(); 
+                var secureDto = dto with { ChatId = chatId, SenderId = userId };
+                var result = await _messageService.SendAsync(secureDto);
+
+                await _hubContext.Clients.Group(chatId.ToString())
+                    .SendAsync("ReceiveMessage", result);
+                Console.WriteLine($"Message was send {secureDto.Content}");
                 return Ok(result);
             }
-            catch(ChatMessageException ex)
+            catch (ChatMessageException ex)
             {
                 return BadRequest(new { error = ex.Code, message = ex.Message });
             }

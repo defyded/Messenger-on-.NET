@@ -17,11 +17,11 @@ namespace IntegrationTests.Service_test
     {
         private readonly Mock<IChatRepository> _chatRepoMock;
         private readonly IChatService _serviceChat;
-
+        private readonly IUserRepository _userRepo;
         public ChatServiceTest()
         {
             _chatRepoMock = new Mock<IChatRepository>();
-            _serviceChat = new ChatService(_chatRepoMock.Object);
+            _serviceChat = new ChatService(_chatRepoMock.Object, _userRepo);
         }
         [Fact]
         public async Task Create_Chat_Positive_Case()
@@ -47,7 +47,7 @@ namespace IntegrationTests.Service_test
                     })
                 .Returns(Task.CompletedTask);
 
-            var result = await _serviceChat.CreatChatAsync(FromId, ToId);
+            var result = await _serviceChat.CreateChatAsync(FromId, ToId);
 
             Assert.NotNull(result);
             Assert.Equal(ToId, result.CompanionId);
@@ -82,7 +82,7 @@ namespace IntegrationTests.Service_test
                 .Setup(r => r.GetByUser(FromId))
                 .ReturnsAsync(new List<Chat> { ExistingChat });
 
-            var result = await _serviceChat.CreatChatAsync(FromId, ToId);
+            var result = await _serviceChat.CreateChatAsync(FromId, ToId);
 
             Assert.NotNull(result);
             Assert.Equal(ExistingChat.Id, result.ChatId);

@@ -26,7 +26,9 @@ namespace Messenger.Infastucture.Repository
 
         public async Task<User?> GetById(Guid Id) => await _context.Users.FirstOrDefaultAsync(x => x.Id == Id);
 
-        public async Task<User?> GetByName(string username) => await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
+        public async Task<List<User>> GetByName(string username) => await _context.Users
+                .Where(x => x.Username.Contains(username))
+                .ToListAsync();
 
         public async Task<ICollection<UserDevice>> GetUserDevices(Guid Id)
         {
